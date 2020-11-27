@@ -1,3 +1,8 @@
+# Movies Web App 
+## Materia: Programacion Avanzada
+## Alumnos: Antoff - Buris - Nuñez - Valledor
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
