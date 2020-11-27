@@ -5,14 +5,17 @@ import { Movie } from "../components/Movie";
 
 export function MovieDetails(props) {
   const [movie, setMovie] = useState([])
+  
   let { id } = useParams()
-
-  async function getMovie() {
-    let moviedata = await API.Movie.get(id)
-    setMovie(moviedata)
-  }
-
-  useEffect(() => { getMovie() }, [])
+  
+  useEffect(
+    () => { 
+      async function getMovie() {
+        let moviedata = await API.Movie.get(id)
+        setMovie(moviedata)
+      }
+      getMovie()
+       }, [id])
 
   return (
     <Movie movie={movie}/>

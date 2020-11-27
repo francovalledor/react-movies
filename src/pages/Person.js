@@ -7,14 +7,15 @@ export function Person(props) {
   const [person, setPerson] = useState({})
   let { id } = useParams()
 
-  async function getCharacter() {
-
-    let persondata = await new API.Person(id).getDetails()
-    setPerson(persondata)
-    console.log(person)
-  }
-
-  useEffect(() => { getCharacter() }, [])
+  
+  useEffect(() => { 
+    
+    async function getCharacter() {
+      let persondata = await new API.Person(id).getDetails()
+      setPerson(persondata)
+    }
+    getCharacter() 
+  }, [id])
 
   return (
   <div className="container p-4">
